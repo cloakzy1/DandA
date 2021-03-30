@@ -68,8 +68,8 @@ int main()
     insetFirst(11);
     insetFirst(10);
     printNode();
+    cout<<"this is the first linklist file code"<<;
     return 0;
-
 
 }
 
