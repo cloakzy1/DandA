@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 struct Node
@@ -9,7 +10,7 @@ struct Node
 };
 
 Node* head = NULL;
-
+int Count;
 
 int insertNode(int data)
 {
@@ -41,6 +42,29 @@ void insetFirst(int data){
 
 }
 
+void InsertNodeNthposition(int data,int position ){
+    Node * temp = new Node();
+    temp->data = data;
+    Node *temp1 = head;  
+    int count=0;
+    while(temp1!=NULL){
+        temp1= temp1->next;
+        count+=1;
+        if(count==position){
+            temp1->next=temp;
+            temp->next =temp1;
+            
+
+        }
+
+
+    }
+    cout<<count;
+
+
+
+}
+
 
 void printNode()
 {
@@ -49,6 +73,7 @@ void printNode()
     while(print!=NULL)
     {
         cout<<print->data<< "->";
+        Count+=1;
         print=print->next;
     }
 
@@ -69,7 +94,10 @@ int main()
     insetFirst(11);
     insetFirst(10);
     printNode();
-    cout<<"this is the first linklist file code"<<endl;
+    cout<<Count<<endl;
+    InsertNodeNthposition(12,2);
+    
     return 0;
+
 
 }
