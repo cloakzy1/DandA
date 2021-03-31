@@ -8,7 +8,6 @@ struct Node
 
 };
 
-
 Node* head = NULL;
 
 
@@ -30,8 +29,8 @@ int insertNode(int data)
         temp1 = temp1->next;
     }
     temp1->next =temp;
+    return 0;
 }
-
 
 void insetFirst(int data){
     Node *temp = new Node();
@@ -41,6 +40,7 @@ void insetFirst(int data){
     temp->next =temp1;
 
 }
+
 
 void printNode()
 {
@@ -66,11 +66,10 @@ int main()
         insertNode(data);
         N--;
     }
-
     insetFirst(11);
     insetFirst(10);
     printNode();
-    cout<<"this is the first linklist file code";
+    cout<<"this is the first linklist file code"<<endl;
     return 0;
 
 }
