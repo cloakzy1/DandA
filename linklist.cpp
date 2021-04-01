@@ -1,7 +1,6 @@
 #include <iostream>
 
 using namespace std;
-
 struct Node
 {
     int data;
@@ -39,7 +38,6 @@ void insetFirst(int data){
     Node * temp1 = head;
     head = temp;
     temp->next =temp1;
-
 }
 
 void InsertNodeNthPosition(int data,int position ){
@@ -53,21 +51,28 @@ void InsertNodeNthPosition(int data,int position ){
     }
     temp->next=temp1->next;
     temp1->next =temp;
+}
 
+void deleteNodeNthPosition(int position){
+    Node * temp  = head;
+    for(int i=0; i<position-2; i++){
+        temp = temp->next;
+
+    }
+    Node * temp1 = temp->next;
+    temp->next = temp1->next;
+    delete(temp1);
 
 }
 
-
 void printNode()
 {
-
-    Node* print =head;
+  Node* print =head;
     while(print!=NULL)
     {
         cout<<print->data<< "->";
         print=print->next;
     }
-
 }
 
 
@@ -86,8 +91,9 @@ int main()
     insetFirst(1);
     InsertNodeNthPosition(3,3);
     printNode();
+    deleteNodeNthPosition(5);
+    cout<<"  "<<endl;
+    printNode();
     
     return 0;
-
-
 }
